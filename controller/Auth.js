@@ -16,7 +16,7 @@ export const Login = async (req, res) => {
         const username = user[0].username
         const email = user[0].email
         const accessToken = jwt.sign({userId, username, email}, process.env.ACCESS_TOKEN_SECRET, {
-            expiresIn: '50s',
+            expiresIn: '30s',
         })
         const refreshToken = jwt.sign({userId, username, email}, process.env.REFRESH_TOKEN_SECRET, {
             expiresIn: '1d',
@@ -34,7 +34,7 @@ export const Login = async (req, res) => {
         });
         res.json({ accessToken })
     } catch (error) {
-        res.status(404).json({msg:"email tidak di temukan"})
+        res.status(404).json({msg:"Username / Email tidak di temukan"})
     }
 }
 
