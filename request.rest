@@ -1,0 +1,28 @@
+GET http://localhost:8080/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJlbWFpbCI6ImFkbWluQGdhbWFpbC5jb20iLCJpYXQiOjE2Nzg1NDg2MjAsImV4cCI6MTY3ODU0ODYzNX0.kCQEYBCswAC9ZWMAPInHctbjbjbI1WYMgzaxfu667Fk
+###
+POST http://localhost:8080/users/register
+Content-Type: application/json
+
+{
+    "username": "admin2",
+    "email": "admin2@gmail.com",
+    "password": "12345",
+    "confPassword": "12345"
+}
+
+###
+POST http://localhost:8080/login
+Content-Type: application/json
+
+{
+    "username": "admin",
+    "password": "12345"
+}
+
+###
+GET http://localhost:8080/token
+
+
+###
+DELETE http://localhost:8080/logout
